@@ -1,0 +1,145 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: white;
+    overflow-x: hidden;
+    transition: opacity 0.4s ease;
+}
+
+/* PAGE TRANSITION */
+body.page-enter {
+    opacity: 0;
+    animation: fadeIn 0.6s forwards ease-out;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* CONSTELLATION BACKGROUND */
+#constellation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background: #050505;
+}
+
+/* SECTIONS */
+.section {
+    padding: 120px 10%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HERO */
+.hero h1 {
+    font-size: 60px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00eaff; }
+    to { text-shadow: 0 0 25px #00eaff; }
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* BUTTONS */
+.btn, .btn-outline {
+    padding: 14px 32px;
+    margin: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.25s ease;
+}
+
+.btn {
+    background: #00eaff;
+    color: #000;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: #00c7d4;
+}
+
+.btn-outline {
+    border: 2px solid #00eaff;
+    color: #00eaff;
+}
+
+.btn-outline:hover {
+    background: #00eaff;
+    color: #000;
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* TOOL CARDS */
+.tool-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tool-card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    width: 280px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00eaff55;
+}
+
+/* KEY BOXES */
+.key-box {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    margin: 20px auto;
+    width: 350px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+}
+
+.key-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00eaff55;
+}
+
+/* FOOTER */
+footer {
+    padding: 40px;
+    opacity: 0.6;
+}
